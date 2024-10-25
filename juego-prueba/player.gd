@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 const gravity = 900
+var looking = 1
 
 const DASH_SPEED = 800
 var dashing = false
@@ -32,12 +33,14 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		if dashing:
-			velocity.x = direction * DASH_SPEED
-		else:
-			velocity.x = direction * SPEED
+	var input_direction = Input.get_axis("left", "right")
+	if input_direction != 0:
+		looking = input_direction
+		
+	
+		
+	if input_direction:
+		velocity.x = input_direction * SPEED
 		if is_on_floor():
 			$AnimationPlayer.play("run")
 	else:
@@ -45,11 +48,17 @@ func _physics_process(delta):
 		if is_on_floor():
 			$AnimationPlayer.play("idle")
 			
+	if dashing:
+		velocity.x = looking * DASH_SPEED
+			
 	# Rotacion
-	if direction == 1:
+	if input_direction == 1:
 		$Sprite2D.flip_h = false
-	elif direction == -1:
+	elif input_direction == -1:
 		$Sprite2D.flip_h = true
+
+	if dashing:
+		$AnimationPlayer.play("dash")
 
 	move_and_slide()
 
