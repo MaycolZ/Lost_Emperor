@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ciww6ih0ksy2t"]
 
-[ext_resource type="Texture2D" uid="uid://c14n74l7vi7e" path="res://Assets/tierra.png" id="1_g8ien"]
+[ext_resource type="Texture2D" uid="uid://c14n74l7vi7e" path="res://Assets/tierra.png" id="1_gc3yu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdtd4"]
 size = Vector2(16, 16)
@@ -8,7 +8,7 @@ size = Vector2(16, 16)
 [node name="Tierra" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_g8ien")
+texture = ExtResource("1_gc3yu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cdtd4")
