@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b1fjxie0b6wv0" path="res://Assets/Rey-Sheet.png" id="2_c6bb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1xmq"]
-size = Vector2(16, 16)
+size = Vector2(16, 5.66277)
 
 [sub_resource type="Animation" id="Animation_lkru3"]
 length = 0.001
@@ -35,7 +35,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [2]
 }
 
 [sub_resource type="Animation" id="Animation_0b1ql"]
@@ -49,10 +49,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_fombo"]
@@ -86,12 +86,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [6]
+"values": [7]
 }
 
 [sub_resource type="Animation" id="Animation_afvo8"]
 resource_name = "run"
-length = 0.85
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -100,10 +99,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.266667, 0.533333, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4, 5]
+"values": [3, 4, 5, 6]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h1vku"]
@@ -122,9 +121,11 @@ script = ExtResource("1_ru88g")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_c6bb0")
-hframes = 7
+hframes = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5808)
+scale = Vector2(0.425436, 2.26937)
 shape = SubResource("RectangleShape2D_s1xmq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
